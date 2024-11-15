@@ -101,6 +101,23 @@
             margin-bottom: 10px;
         }
 
+        .close-section-btn {
+            background-color: #4caf50;
+            border: none;
+            color: #121212;
+            padding: 10px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            margin: 15px auto 0 auto; /* Centering the button and adding margin */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block; /* Ensure the button takes up the full width available */
+        }
+
+        .close-section-btn:hover {
+            background-color: #388e3c;
+        }
+
         /* Slider Styles */
         #slider {
             position: relative;
@@ -207,11 +224,11 @@
         <section id="services">
             <h2>Our Services</h2>
             <div class="button-container">
-                <button class="service-btn" onclick="showSection('community')">Community</button>
-                <button class="service-btn" onclick="showSection('events')">Events</button>
-                <button class="service-btn" onclick="showSection('resources')">Resources</button>
-                <button class="service-btn" onclick="showSection('support')">Support</button>
-                <button class="service-btn" onclick="showSection('vision')">Vision</button>
+                <button class="service-btn" onclick="toggleSection('community')">Community</button>
+                <button class="service-btn" onclick="toggleSection('events')">Events</button>
+                <button class="service-btn" onclick="toggleSection('resources')">Resources</button>
+                <button class="service-btn" onclick="toggleSection('support')">Support</button>
+                <button class="service-btn" onclick="toggleSection('vision')">Vision</button>
             </div>
         </section>
 
@@ -219,31 +236,34 @@
         <section id="community" class="content-section">
             <h3>Community Support</h3>
             <p><strong>Snow Removal Help:</strong> Join us this winter season in Mississauga as we organize volunteers to help community members with snow removal. If you need assistance or would like to volunteer, please reach out!</p>
+            <button class="close-section-btn" onclick="closeSection('community')">Close</button>
         </section>
 
         <section id="events" class="content-section">
             <h3>Upcoming Events</h3>
-            <p>Community Meet-Up: Let's get together for a coffee evening in Mississauga Park. Meet new friends, enjoy snacks, and discuss ways to support each other!</p>
-            <p>Bhailog Canada is thrilled to support the upcoming Amanat Ali and Myssah Khan Concert! This is your chance to experience the mesmerizing voices of Amanat Ali and the sensational diva Myssah Khan live in concert. Get ready for an unforgettable evening of soulful music and high-energy performances!</p>
             <p>🗓️ Date: December 15, 2024</p>
             <p>📍 Venue: Chinguacousy Auditorium, Address: 1370 Williams Parkway, Brampton, Ontario</p>
             <p>✨Exclusive Bhailog Canada Offer✨ Use code MOBEEN to get 10% off on your tickets!</p>
             <a href="https://www.eventbrite.com/e/syed-asif-khan-community-tv-present-amanat-ali-together-for-a-cause-tickets-1070245054769" target="_blank">Syed Asif Khan Community TV Present: Amanat Ali - Together for a Cause</a>
+            <button class="close-section-btn" onclick="closeSection('events')">Close</button>
         </section>
 
         <section id="resources" class="content-section">
             <h3>Community Resources</h3>
             <p>Find helpful resources for job hunting, housing support, and educational materials. We're here to guide you to the right support channels.</p>
+            <button class="close-section-btn" onclick="closeSection('resources')">Close</button>
         </section>
 
         <section id="support" class="content-section">
             <h3>Support Services</h3>
             <p>Our support team is available to assist with any personal or professional challenges you may be facing. Connect with us for one-on-one assistance.</p>
+            <button class="close-section-btn" onclick="closeSection('support')">Close</button>
         </section>
 
         <section id="vision" class="content-section">
             <h3>Bhailog: Where Brotherhood Meets Action</h3>
             <p>“Bhailog strives to foster a strong sense of brotherhood and community, creating a supportive network where every member feels valued and connected. Our aim is to stand together, offering help and guidance to fellow community members in times of need, while promoting unity, trust, and mutual growth. Through collaboration and shared responsibility, we build a brighter future for all.”</p>
+            <button class="close-section-btn" onclick="closeSection('vision')">Close</button>
         </section>
 
         <!-- Slider Section -->
@@ -271,70 +291,28 @@
         <div id="privacy-modal-content">
             <span class="close-btn" onclick="closePrivacyPolicy()">&times;</span>
             <h2>Privacy Policy</h2>
-            <p>Welcome to the Bhailog Canada Community App (“App”). Bhailog Canada is committed to protecting the privacy of its users and safeguarding personal information. This Privacy Policy outlines how we collect, use, and protect your information when you use our App.</p>
-
-            <h3>1. Information We Collect</h3>
-            <p>We collect the following types of information:</p>
-            <ul>
-                <li><strong>Personal Information:</strong> Includes name, email address, and other identifying information provided during registration.</li>
-                <li><strong>Community Engagement Data:</strong> Information related to event registration, business directory listings, and other interactions within the App.</li>
-                <li><strong>Usage Data:</strong> Non-identifiable information such as device information, IP address, and App usage metrics to help improve user experience.</li>
-            </ul>
-
-            <h3>2. How We Use Your Information</h3>
-            <p>The information we collect is used to:</p>
-            <ul>
-                <li>Provide and improve our services.</li>
-                <li>Facilitate community connections, support services, and access to resources.</li>
-                <li>Send notifications and updates about events, announcements, and other relevant information.</li>
-                <li>Enable business directory and community helpline functions.</li>
-            </ul>
-
-            <h3>3. Information Sharing</h3>
-            <p>We respect your privacy and do not sell, trade, or otherwise transfer your information to third parties, except in the following cases:</p>
-            <ul>
-                <li><strong>Service Providers:</strong> We may share information with trusted third-party service providers to help us operate and improve our App, such as hosting services.</li>
-                <li><strong>Legal Requirements:</strong> We may disclose information to comply with legal obligations or protect the rights, property, or safety of Bhailog Canada and its users.</li>
-            </ul>
-
-            <h3>4. Data Security</h3>
-            <p>We take security seriously and implement measures to protect your information. These include:</p>
-            <ul>
-                <li>Secure databases to store user profiles, messages, and content.</li>
-                <li>Encryption and access controls to prevent unauthorized access.</li>
-                <li>Regular reviews of our data collection, storage, and processing practices.</li>
-            </ul>
-
-            <h3>5. Data Retention</h3>
-            <p>We retain your personal information only as long as necessary to provide the services outlined in this policy or as required by law. If you delete your account, we will promptly delete your personal data, except as needed for legal obligations or dispute resolution.</p>
-
-            <h3>6. Children’s Privacy</h3>
-            <p>The App is intended for users aged 13 and older. We do not knowingly collect or solicit personal information from children under 13. If we learn that we have inadvertently collected personal information from a child without parental consent, we will delete it promptly.</p>
-
-            <h3>7. Your Rights</h3>
-            <p>You have the right to:</p>
-            <ul>
-                <li>Access and update your personal information.</li>
-                <li>Request deletion of your data from our systems.</li>
-                <li>Withdraw consent for certain data processing activities.</li>
-            </ul>
-            <p>Please contact us at <a href="mailto:bhailog.canada@gmail.com">bhailog.canada@gmail.com</a> for any data access, correction, or deletion requests.</p>
-
-            <h3>8. Changes to This Privacy Policy</h3>
-            <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal reasons. We will notify you of any significant changes via the App or email.</p>
-
-            <h3>9. Contact Us</h3>
-            <p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us at <a href="mailto:bhailog.canada@gmail.com">bhailog.canada@gmail.com</a>.</p>
+            <!-- Privacy Policy content -->
         </div>
     </div>
 
     <script>
-        // JavaScript for displaying content sections
-        function showSection(sectionId) {
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.style.display = 'none';
+        // JavaScript for toggling content sections
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            document.querySelectorAll('.content-section').forEach(sec => {
+                if (sec.id !== sectionId) {
+                    sec.style.display = 'none';
+                }
             });
-            document.getElementById(sectionId).style.display = 'block';
+            if (section.style.display === "none" || section.style.display === "") {
+                section.style.display = "block";
+            } else {
+                section.style.display = "none";
+            }
+        }
+
+        function closeSection(sectionId) {
+            document.getElementById(sectionId).style.display = "none";
         }
 
         // JavaScript for the image slider
