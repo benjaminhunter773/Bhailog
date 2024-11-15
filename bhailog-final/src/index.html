@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhailog Community Support</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+             /* Pakistan and Canada flag emojis as background */
+            
+            
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #1b1b1b;
+            border-bottom: 2px solid #4caf50;
+        }
+
+        header .logo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #4caf50;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #b0b0b0;
+        }
+
+        /* Vision Section */
+        #vision {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            margin-top: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #vision h2 {
+            color: #4caf50;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        #vision p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Services Section */
+        #services h2 {
+            color: #4caf50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .service-btn {
+            background-color: #4caf50;
+            border: none;
+            color: #121212;
+            padding: 20px 30px;
+            font-size: 1.1em;
+            border-radius: 15px;
+            width: 150px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .service-btn:hover {
+            background-color: #388e3c;
+            transform: scale(1.05);
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content-section h3 {
+            color: #4caf50;
+            margin-bottom: 15px;
+        }
+
+        /* Slider Styles */
+        #slider {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            height: 400px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            background-color: #000;
+        }
+
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            opacity: 0;
+            transition: opacity 1s ease, left 1s ease;
+        }
+
+        .slider-image.active {
+            left: 0;
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1b1b1b;
+            color: #b0b0b0;
+            text-align: center;
+            padding: 15px;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #4caf50;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Modal Styles */
+        #privacy-modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding-top: 50px;
+        }
+
+        #privacy-modal-content {
+            background-color: #2e2e2e;
+            color: #e0e0e0;
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        #privacy-modal h2 {
+            color: #4caf50;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #fff;
+        }
+
+        /* Media Queries */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .service-btn {
+                width: 120px;
+                padding: 15px;
+            }
+
+            footer {
+                font-size: 0.9em;
+            }
+
+            #slider {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://i.imgur.com/7qyk72w.jpg" alt="Bhailog Logo">
+        </div>
+        <h1>Bhailog Community Support</h1>
+        <p>Connecting Communities, Building Friendships</p>
+    </header>
+
+    <!-- Vision Section -->
+    <section id="vision">
+        <h2>Bhailog: Where Brotherhood Meets Action</h2>
+        <p>“Bhailog strives to foster a strong sense of brotherhood and community, creating a supportive network where every member feels valued and connected. Our aim is to stand together, offering help and guidance to fellow community members in times of need, while promoting unity, trust, and mutual growth. Through collaboration and shared responsibility, we build a brighter future for all.”
+        </p>
+    </section>
+
+    <main>
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="button-container">
+                <button class="service-btn" onclick="showSection('community')">Community</button>
+                <button class="service-btn" onclick="showSection('events')">Events</button>
+                <button class="service-btn" onclick="showSection('resources')">Resources</button>
+                <button class="service-btn" onclick="showSection('support')">Support</button>
+            </div>
+        </section>
+
+        <!-- Content Sections for Each Button -->
+        <section id="community" class="content-section">
+            <h3>Community Support</h3>
+            <p><strong>Snow Removal Help:</strong> Join us this winter season in Mississauga as we organize volunteers to help community members with snow removal. If you need assistance or would like to volunteer, please reach out!</p>
+        </section>
+
+        <section id="events" class="content-section">
+            <h3>Upcoming Events</h3>
+            <p>Community Meet-Up: Let's get together for a coffee evening in Mississauga Park. Meet new friends, enjoy snacks, and discuss ways to support each other!</p>
+            <p>Bhailog Canada is thrilled to support the upcoming Amanat Ali and Myssah Khan Concert! This is your chance to experience the mesmerizing voices of Amanat Ali and the sensational diva Myssah Khan live in concert. Get ready for an unforgettable evening of soulful music and high-energy performances!</p>
+            <p>🗓️ Date: December 15, 2024</p>
+            <p>📍 Venue: Chinguacousy Auditorium, Address: 1370 Williams Parkway, Brampton, Ontario</p>
+            <p>✨Exclusive Bhailog Canada Offer✨ Use code MOBEEN to get 10% off on your tickets!</p>
+            <a href="https://www.eventbrite.com/e/syed-asif-khan-community-tv-present-amanat-ali-together-for-a-cause-tickets-1070245054769" target="_blank">Syed Asif Khan Community TV Present: Amanat Ali - Together for a Cause</a>
+        </section>
+
+        <section id="resources" class="content-section">
+            <h3>Community Resources</h3>
+            <p>Find helpful resources for job hunting, housing support, and educational materials. We're here to guide you to the right support channels.</p>
+        </section>
+
+        <section id="support" class="content-section">
+            <h3>Support Services</h3>
+            <p>Our support team is available to assist with any personal or professional challenges you may be facing. Connect with us for one-on-one assistance.</p>
+        </section>
+
+        <!-- Slider Section -->
+        <section id="slider">
+            <div class="slider-image active" style="background-image: url('https://i.imgur.com/mT8SMqC.jpg');"></div>
+            <div class="slider-image" style="background-image: url('https://i.imgur.com/NiBq2Ll.jpg');"></div>
+            <div class="slider-image" style="background-image: url('https://i.imgur.com/9NNFDJQ.jpg');"></div>
+            <div class="slider-image" style="background-image: url('https://i.imgur.com/saUx8Ug.jpg');"></div>
+            <div class="slider-image" style="background-image: url('https://i.imgur.com/lL1sWPv.jpg');"></div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you need assistance, please reach out to us via email:</p>
+            <p><strong>Email:</strong> <a href="mailto:bhailog.canada@gmail.com">bhailog.canada@gmail.com</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bhailog Canada | <a onclick="openPrivacyPolicy()">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal">
+        <div id="privacy-modal-content">
+            <span class="close-btn" onclick="closePrivacyPolicy()">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p>Welcome to the Bhailog Canada Community App (“App”). Bhailog Canada is committed to protecting the privacy of its users and safeguarding personal information. This Privacy Policy outlines how we collect, use, and protect your information when you use our App.</p>
+
+            <h3>1. Information We Collect</h3>
+            <p>We collect the following types of information:</p>
+            <ul>
+                <li><strong>Personal Information:</strong> Includes name, email address, and other identifying information provided during registration.</li>
+                <li><strong>Community Engagement Data:</strong> Information related to event registration, business directory listings, and other interactions within the App.</li>
+                <li><strong>Usage Data:</strong> Non-identifiable information such as device information, IP address, and App usage metrics to help improve user experience.</li>
+            </ul>
+
+            <h3>2. How We Use Your Information</h3>
+            <p>The information we collect is used to:</p>
+            <ul>
+                <li>Provide and improve our services.</li>
+                <li>Facilitate community connections, support services, and access to resources.</li>
+                <li>Send notifications and updates about events, announcements, and other relevant information.</li>
+                <li>Enable business directory and community helpline functions.</li>
+            </ul>
+
+            <h3>3. Information Sharing</h3>
+            <p>We respect your privacy and do not sell, trade, or otherwise transfer your information to third parties, except in the following cases:</p>
+            <ul>
+                <li><strong>Service Providers:</strong> We may share information with trusted third-party service providers to help us operate and improve our App, such as hosting services.</li>
+                <li><strong>Legal Requirements:</strong> We may disclose information to comply with legal obligations or protect the rights, property, or safety of Bhailog Canada and its users.</li>
+            </ul>
+
+            <h3>4. Data Security</h3>
+            <p>We take security seriously and implement measures to protect your information. These include:</p>
+            <ul>
+                <li>Secure databases to store user profiles, messages, and content.</li>
+                <li>Encryption and access controls to prevent unauthorized access.</li>
+                <li>Regular reviews of our data collection, storage, and processing practices.</li>
+            </ul>
+
+            <h3>5. Data Retention</h3>
+            <p>We retain your personal information only as long as necessary to provide the services outlined in this policy or as required by law. If you delete your account, we will promptly delete your personal data, except as needed for legal obligations or dispute resolution.</p>
+
+            <h3>6. Children’s Privacy</h3>
+            <p>The App is intended for users aged 13 and older. We do not knowingly collect or solicit personal information from children under 13. If we learn that we have inadvertently collected personal information from a child without parental consent, we will delete it promptly.</p>
+
+            <h3>7. Your Rights</h3>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access and update your personal information.</li>
+                <li>Request deletion of your data from our systems.</li>
+                <li>Withdraw consent for certain data processing activities.</li>
+            </ul>
+            <p>Please contact us at <a href="mailto:bhailog.canada@gmail.com">bhailog.canada@gmail.com</a> for any data access, correction, or deletion requests.</p>
+
+            <h3>8. Changes to This Privacy Policy</h3>
+            <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal reasons. We will notify you of any significant changes via the App or email.</p>
+
+            <h3>9. Contact Us</h3>
+            <p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us at <a href="mailto:bhailog.canada@gmail.com">bhailog.canada@gmail.com</a>.</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for displaying content sections
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // JavaScript for the image slider
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slider-image');
+        const totalImages = images.length;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000);
+
+        // JavaScript for Privacy Policy Modal
+        function openPrivacyPolicy() {
+            document.getElementById("privacy-modal").style.display = "block";
+        }
+
+        function closePrivacyPolicy() {
+            document.getElementById("privacy-modal").style.display = "none";
+        }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById("privacy-modal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>
