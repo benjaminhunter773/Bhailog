@@ -209,6 +209,24 @@
         .close-btn:hover {
             color: #fff;
         }
+
+        .privacy-close-btn {
+            background-color: #4caf50;
+            border: none;
+            color: #121212;
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            text-align: center;
+        }
+
+        .privacy-close-btn:hover {
+            background-color: #388e3c;
+        }
     </style>
 </head>
 <body>
@@ -241,7 +259,7 @@
 
         <section id="events" class="content-section">
             <h3>Upcoming Events</h3>
-            <p>🗓️ Date: December 15, 2024</p>
+            <p>📏 Date: December 15, 2024</p>
             <p>📍 Venue: Chinguacousy Auditorium, Address: 1370 Williams Parkway, Brampton, Ontario</p>
             <p>✨Exclusive Bhailog Canada Offer✨ Use code MOBEEN to get 10% off on your tickets!</p>
             <a href="https://www.eventbrite.com/e/syed-asif-khan-community-tv-present-amanat-ali-together-for-a-cause-tickets-1070245054769" target="_blank">Syed Asif Khan Community TV Present: Amanat Ali - Together for a Cause</a>
@@ -291,7 +309,18 @@
         <div id="privacy-modal-content">
             <span class="close-btn" onclick="closePrivacyPolicy()">&times;</span>
             <h2>Privacy Policy</h2>
-            <!-- Privacy Policy content -->
+            <p>We at Bhailog Canada are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+            <h3>Information We Collect</h3>
+            <p>We may collect personal information such as your name, email address, and contact information when you interact with us through our website or community services. We also collect non-personal data such as browser type and access times to help us improve our services.</p>
+            <h3>How We Use Your Information</h3>
+            <p>We use the information collected to provide and improve our services, communicate with you, and ensure the security of our community. We may also use your information for event coordination and outreach programs within the community.</p>
+            <h3>Sharing Your Information</h3>
+            <p>We do not share your personal information with third parties without your consent, except as required by law or to provide you with services requested by you.</p>
+            <h3>Security</h3>
+            <p>We take reasonable steps to protect your personal information from unauthorized access, use, or disclosure. However, no internet transmission is entirely secure, and we cannot guarantee the absolute security of your data.</p>
+            <h3>Your Rights</h3>
+            <p>You have the right to access, update, or delete your personal information at any time. If you have any concerns regarding your data, please contact us at <a href="mailto:bhailog.canada@gmail.com">bhailog.canada@gmail.com</a>.</p>
+            <button class="privacy-close-btn" onclick="closePrivacyPolicy()">Close</button>
         </div>
     </div>
 
