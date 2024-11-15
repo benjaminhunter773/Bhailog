@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>bhailog final</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,9 +13,9 @@
             padding: 0;
             background-color: #121212;
             color: #e0e0e0;
-             /* Pakistan and Canada flag emojis as background */
-            
-            
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Header Styles */
@@ -37,67 +27,42 @@
         }
 
         header .logo img {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             margin-bottom: 15px;
             object-fit: cover;
         }
 
         header h1 {
-            font-size: 2.5em;
+            font-size: 2em;
             margin: 0;
             color: #4caf50;
         }
 
         header p {
-            font-size: 1.2em;
+            font-size: 1em;
             margin-top: 10px;
             color: #b0b0b0;
         }
 
-        /* Vision Section */
-        #vision {
-            text-align: center;
-            padding: 30px 20px;
-            background-color: #1e1e1e;
-            color: #e0e0e0;
-            margin-top: 20px;
-            border-radius: 10px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #vision h2 {
-            color: #4caf50;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-        }
-
-        #vision p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin: 0;
-        }
-
         /* Main Content */
         main {
-            padding: 20px;
+            padding: 15px;
             text-align: center;
         }
 
         /* Services Section */
         #services h2 {
             color: #4caf50;
-            font-size: 1.8em;
-            margin-bottom: 20px;
+            font-size: 1.5em;
+            margin-bottom: 15px;
         }
 
         .button-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
@@ -105,10 +70,10 @@
             background-color: #4caf50;
             border: none;
             color: #121212;
-            padding: 20px 30px;
-            font-size: 1.1em;
-            border-radius: 15px;
-            width: 150px;
+            padding: 15px 20px;
+            font-size: 1em;
+            border-radius: 10px;
+            width: 130px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
@@ -121,27 +86,27 @@
         /* Content Sections */
         .content-section {
             display: none;
-            margin-top: 20px;
+            margin-top: 15px;
             text-align: center;
             background-color: #1e1e1e;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
-            max-width: 600px;
+            max-width: 90%;
             margin-left: auto;
             margin-right: auto;
         }
 
         .content-section h3 {
             color: #4caf50;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         /* Slider Styles */
         #slider {
             position: relative;
             width: 100%;
-            max-width: 700px;
-            height: 400px;
+            max-width: 90%;
+            height: 250px;
             margin: 20px auto;
             overflow: hidden;
             border-radius: 15px;
@@ -152,7 +117,7 @@
         .slider-image {
             width: 100%;
             height: 100%;
-            background-size: contain;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             position: absolute;
@@ -173,7 +138,7 @@
             color: #b0b0b0;
             text-align: center;
             padding: 15px;
-            font-size: 1em;
+            font-size: 0.9em;
         }
 
         footer a {
@@ -206,7 +171,7 @@
             margin: auto;
             padding: 20px;
             border-radius: 8px;
-            width: 80%;
+            width: 90%;
             max-width: 600px;
             max-height: 80vh;
             overflow-y: auto;
@@ -227,26 +192,6 @@
         .close-btn:hover {
             color: #fff;
         }
-
-        /* Media Queries */
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2em;
-            }
-
-            .service-btn {
-                width: 120px;
-                padding: 15px;
-            }
-
-            footer {
-                font-size: 0.9em;
-            }
-
-            #slider {
-                height: 250px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -258,13 +203,6 @@
         <p>Connecting Communities, Building Friendships</p>
     </header>
 
-    <!-- Vision Section -->
-    <section id="vision">
-        <h2>Bhailog: Where Brotherhood Meets Action</h2>
-        <p>“Bhailog strives to foster a strong sense of brotherhood and community, creating a supportive network where every member feels valued and connected. Our aim is to stand together, offering help and guidance to fellow community members in times of need, while promoting unity, trust, and mutual growth. Through collaboration and shared responsibility, we build a brighter future for all.”
-        </p>
-    </section>
-
     <main>
         <section id="services">
             <h2>Our Services</h2>
@@ -273,6 +211,7 @@
                 <button class="service-btn" onclick="showSection('events')">Events</button>
                 <button class="service-btn" onclick="showSection('resources')">Resources</button>
                 <button class="service-btn" onclick="showSection('support')">Support</button>
+                <button class="service-btn" onclick="showSection('vision')">Vision</button>
             </div>
         </section>
 
@@ -300,6 +239,11 @@
         <section id="support" class="content-section">
             <h3>Support Services</h3>
             <p>Our support team is available to assist with any personal or professional challenges you may be facing. Connect with us for one-on-one assistance.</p>
+        </section>
+
+        <section id="vision" class="content-section">
+            <h3>Bhailog: Where Brotherhood Meets Action</h3>
+            <p>“Bhailog strives to foster a strong sense of brotherhood and community, creating a supportive network where every member feels valued and connected. Our aim is to stand together, offering help and guidance to fellow community members in times of need, while promoting unity, trust, and mutual growth. Through collaboration and shared responsibility, we build a brighter future for all.”</p>
         </section>
 
         <!-- Slider Section -->
@@ -423,9 +367,5 @@
             }
         };
     </script>
-</body>
-</html>
-<!-- partial -->
-  
 </body>
 </html>
